@@ -1,0 +1,914 @@
+#Exercices https://inforef.be/swi/download/apprendre_python3_5.pdf
+
+#EXERCICE 0 : Suite de Fibonnacci,c'est à dire suite dans laquelle chaque terme 
+#doit être égale à la somme des deux précédents.
+
+print("EXERCICE 0 : Suite de Fibonnacci")
+
+a = 1
+b = 1
+c = 1
+
+while(c < 51):
+	print(c, " : ", b, type(b))
+	a, b , c = b, a+b, c+1
+	
+#EXERCICE 1 : Écrivez un programme qui calcule le volume d’un parallélépipède 
+#rectangle dont sont fournis au départ la largeur, la hauteur et la profondeur.
+
+print("EXERCICE 1 :")
+
+L = 10                     #L=longueur      
+l = 5.4                    #l=largeur
+h = 6                      #h=hauteur                                      
+
+print("On calcule le volume d'un parallépipède rectangle dont la longueur est de 10cm, la largeur de 4,5cm et la hauteur de 6cm")
+
+print("Volume = ", L*l*h)                         #Volume = Longueur*Largeur*Hauteur
+
+#EXERCICE 2 : Écrivez un programme qui convertit un nombre entier de secondes fourni au départ en un
+#nombre d’années, de mois, de jours, de minutes et de secondes (utilisez l’opérateur modulo : %).
+
+print("EXERCICE 2 :")
+
+totalSeconde = 1000000000
+ 
+totalMinute = totalSeconde // 60 
+secondes = totalSeconde % 60 
+ 
+totalHeure = totalMinute // 60  
+minutes = totalMinute % 60 
+ 
+totalJour = totalHeure // 24 
+heures = totalHeure % 24 
+ 
+totalMois = totalJour // 30  
+jours = totalJour % 30  
+ 
+totalAnnée = totalMois // 12 
+mois = totalMois % 12  
+ 
+années = totalAnnée  
+
+print("1 000 000 000 de secondes correspondent à ", années, " ans, ", mois, " mois, ", end =" ")
+print(jours, " jours, ", heures, " heures, ", minutes, " minutes, ", secondes, " secondes.")
+
+#EXERCICE 3 : Écrivez un programme qui affiche les 20 premiers termes de la table de multiplication par 7, en
+#signalant au passage (à l’aide d’une astérisque) ceux qui sont des multiples de 3.
+#Exemple : 7 14 21 * 28 35 42 * 49 ...
+
+print("EXERCICE 3 :")
+print("On affiche les 20 premiers termes de la table de multiplication de 7 et on met une astérisque après les multiples de 3")
+
+compteur = 1
+nombreDeBase = 7
+nombre = 7
+
+print(nombreDeBase, end =" ")
+
+while(compteur < 21):
+    nombre, compteur = nombre+nombreDeBase, compteur+1
+    if(nombre % 3 != 0):
+        print(nombre, end =" ")
+    if(nombre % 3 == 0):
+	    print(nombre, "*", end =" ")
+	    
+#EXERCICE 4 : Écrivez un programme qui calcule les 50 premiers termes de la table de 
+#multiplication par 13,mais n’affiche que ceux qui sont des multiples de 7.
+
+print(" ")
+print("EXERCICE 4 :")
+print("On affiche les 50 premiers termes de la table de multiplication de 13 et on met une astérisque après les multiples de 7")
+
+compteur = 1
+nombreDeBase = 13
+nombre = 13
+
+print(nombreDeBase, end =" ")
+
+while(compteur < 51):
+	nombre, compteur = nombre+nombreDeBase, compteur+1
+	if(nombre % 7 != 0):
+		print(nombre, end= " ")
+		
+#EXERCICE 5 : Écrivez un programme qui affiche la suite de symboles suivante :
+#*
+#**
+#***
+#****
+#*****
+#******
+#*******
+
+print(" ")
+print("Exercice 5 :")
+
+symboleDeBase = "*"
+symbole = "*"
+compteur = 1
+
+while(compteur < 8):
+    print(symbole)	
+    symbole, compteur = symbole+symboleDeBase, compteur+1
+     
+#EXERCICE 6 : Écrivez un programme qui convertisse en radians un angle 
+#fourni au départ en degrés, minutes, secondes.
+    
+print("EXERCICE 6 :")
+
+degré = 65              #L'angle mesure 65.365°
+minutes = 0.365*60      # = 21.9   
+secondes = 0.9*60       # = 54
+
+degrés = degré + (minutes/60) + (secondes/3600)      #Convertir la base en degrés
+
+pi = 3.141592653589793238462643383279502884197      
+
+radians = (pi * degrés) / 180        #Convertir les degrés en radians
+
+print("On a un angle qui mesure ", degré, "°, ", minutes, "', ", secondes, "''.")
+print("Cet angles mesure ", radians, " radians")
+
+#EXERCICE 7 : Écrivez un programme qui convertisse en degrés, minutes, secondes 
+#un angle fourni au départ en radians.
+
+print("EXERCICE 7 :")
+
+#Sachant que radians = pi * (degres(decimaux)) / 180 
+
+#Donner la base 
+degrésBase = 34 
+minutesBase = 31 
+secondesBase = 48 
+
+#Convertir la base en degrés décimaux 
+
+degrés = degrésBase + (minutesBase / 60) + (secondesBase / 3600) 
+
+#Definition de pi(3,141592653589793238462643383279502884197) 
+
+pi = 3.141592653589793238462643383279502884197 
+
+#Effectuer la convertion des degrés en radians 
+
+radians = (pi * degrés) / 180 
+
+print("Si l'angle est égal à : ", degrésBase, "degrés", minutesBase, "minutes", secondesBase, "secondes") 
+print("Il fait donc : ", radians, "radians")
+
+#EXERCICE 8 : Écrivez un programme qui convertisse en degrés Celsius une température exprimée au départ
+#en degrés Fahrenheit, ou l’inverse.  
+
+print("EXERCICE 8 :")
+
+temperatureC = 56
+
+#La formule de convertion est : Température en degrés Fahrenheit = Température en degrés Celsius * 1.8 + 32
+
+temperatureF = temperatureC * 1.8 +32
+
+print("On convertit ", temperatureC, " degrés Celsius en degrés Fahrenheit.")
+print(temperatureC, " degrés Celsius font ", temperatureF, " degrés Fahrenheit.")
+
+#EXERCICE 9 : Écrivez un programme qui calcule les intérêts accumulés chaque année pendant 20 ans, par
+#capitalisation d’une somme de 100 euros placée en banque au taux fixe de 4,3 %
+
+print("EXERCICE 9 :")
+
+compteur = 0
+cumulInteret = 0
+sommeDeBase = 100
+somme = 100
+tauxFixe = 4.3
+
+while(compteur < 21):
+	print("Interets accumules apres ", compteur, " an(s) : ", cumulInteret, " --> somme : ", somme)
+	cumulInteret = cumulInteret+(somme*(tauxFixe/100))
+	somme = sommeDeBase+cumulInteret
+	compteur = compteur+1
+	
+ 
+#EXERCICE 10 : Une légende de l’Inde ancienne raconte que le jeu d’échecs a été inventé par un vieux sage,
+#que son roi voulut remercier en lui affirmant qu’il lui accorderait n’importe quel cadeau en
+#récompense. Le vieux sage demanda qu’on lui fournisse simplement un peu de riz pour ses
+#vieux jours, et plus précisément un nombre de grains de riz suffisant pour que l’on puisse en
+#déposer 1 seul sur la première case du jeu qu’il venait d’inventer, deux sur la suivante, quatre
+#sur la troisième, et ainsi de suite jusqu’à la 64eme case.
+#Écrivez un programme Python qui affiche le nombre de grains à déposer sur chacune des 64
+#cases du jeu. Calculez ce nombre de deux manières :
+#• le nombre exact de grains (nombre entier) 
+#• le nombre de grains en notation scientifique (nombre réel)
+
+print("EXERCICE 10 :")
+
+compteur = 1        #Correspond à la case étudiée
+grainsRizR = 1.0    #Nombre de grains de riz dit en notation scientifique
+grainsRizN = 1      #Nombre de grains de riz dit avec un nombre entier
+
+while(compteur < 65):
+	print("Nombre de grains de riz sur la case ", compteur, " dit en notation scientifique : ", grainsRizR)
+	print("                                         dit avec un nombre réel : ", grainsRizN)
+	grainsRizR, grainsRizN, compteur = grainsRizR*2, grainsRizN*2, compteur+1
+	
+#EXERCICE 11 : Écrivez un script qui compte le nombre d’occurrences du caractère « e » dans une chaîne.
+
+print("EXERCICE 11 :")
+
+ch = "Monsieur est un homme du peuple"
+compteur = 0
+ 
+for lettre in ch:
+     if lettre == 'e':
+         compteur = compteur + 1
+
+print('Dans la phrase "', ch, '", il y a ', compteur+1, ' e')
+ 
+         
+#EXERCICE 12 : Écrivez un script qui recopie une chaîne (dans une nouvelle variable), en insérant des
+#astérisques entre les caractères.
+#Ainsi par exemple, « gaston » devra devenir « g*a*s*t*o*n »
+
+print("EXERCICE 12 :")
+
+mot = "cacaoweb"
+
+print('*'.join(mot))
+
+#EXERCICE 13 : Écrivez un script qui détermine si une chaîne contient ou non le caractère « e ».
+
+print("EXERCICE 13 :")
+
+phrase = "La course de cadis"
+
+if 'e' in phrase:
+    print("La phrase 'la course de cadis' contient un e !")
+else:
+	print("La phrase 'la course de cadis' ne contient pas de e")
+	
+#EXERCICE 14 : Écrivez un script qui recopie une chaîne (dans une nouvelle variable) en l’inversant.
+#Ainsi par exemple, « zorglub » deviendra « bulgroz ».
+
+print("EXERCICE 14 :")
+
+mot = "coeur"
+motInversé = ''
+
+for lettre in mot :
+    motInversé = lettre + motInversé
+
+print('Résultat :', motInversé)
+
+#EXERCICE 15 : En partant de l’exercice précédent, écrivez un script qui détermine si une chaîne de caractères
+#donnée est un palindrome (c’est-à-dire une chaîne qui peut se lire indifféremment dans les
+#deux sens), comme par exemple « radar » ou « s.o.s ».
+
+print("EXERCICE 15 :")
+
+print("Le mot '",mot,"' est-il un palindrome ?")
+if motInversé == mot:
+    print("Bien sûr !")
+else:
+	print("Absolument pas") 
+	
+#EXERCICE 16 : Soient les listes suivantes :
+#t1 = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+#t2 = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
+# 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
+#Écrivez un petit programme qui crée une nouvelle liste t3. Celle-ci devra contenir tous les
+#éléments des deux listes en les alternant, de telle manière que chaque nom de mois soit suivi
+#du nombre de jours correspondant :
+#['Janvier',31,'Février',28,'Mars',31, etc...].
+
+print("EXERCICE 16 :")
+
+t1 = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+t2 = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
+t3 = []
+
+for cpt in range(len(t1)):
+	t3.append(t2[cpt])
+	t3.append(t1[cpt])
+	
+print(t3)
+
+#EXERCICE 17 : Écrivez un programme qui affiche « proprement » tous les éléments d’une liste. Si on l’appliquait
+#par exemple à la liste t2 de l’exercice ci-dessus, on devrait obtenir :
+#Janvier Février Mars Avril Mai Juin Juillet Août Septembre Octobre Novembre Décembre
+	
+print("EXERCICE 17 :")
+
+c = 0
+t3 = []
+
+while c < len(t2):
+	t3, c = t2[c], c+1
+	print(t3, end=" ")
+	
+print("")
+
+#EXERCICE 18 : Écrivez un programme qui recherche le plus grand élément présent dans une liste donnée. Par
+#exemple, si on l’appliquait à la liste [32, 5, 12, 8, 3, 75, 2, 15], ce programme devrait
+#afficher : le plus grand élément de cette liste a la valeur 75.
+
+print("EXERCICE 18 :")
+
+nombres = [55, 24, 69, 26, 45,666, 31, 22]
+
+k = 0
+max = 0
+
+while k < len(nombres)-1:
+	if max < nombres[k]:
+		max = nombres[k]
+	k = k + 1
+    
+print("Le plus grand élément de cette liste est ", max)
+
+#EXERCICE 19 : Écrivez un programme qui analyse un par un tous les éléments d’une liste de nombres (par
+#exemple celle de l’exercice précédent) pour générer deux nouvelles listes. L’une contiendra
+#seulement les nombres pairs de la liste initiale, et l’autre les nombres impairs. Par exemple, si la
+#liste initiale est celle de l’exercice précédent, le programme devra construire une liste pairs
+#qui contiendra [32, 12, 8, 2], et une liste impairs qui contiendra [5, 3, 75, 15]. Astuce :
+#pensez à utiliser l’opérateur modulo (%) déjà cité précédemment.
+
+print("EXERCICE 19 :")
+
+tt = [7, 52, 33, 4, 9, 6, 88, 59, 5]
+i = 0
+tp = []
+ti = []
+
+while i < len(tt)-1:
+	if tt[i] % 2 == 0:
+		tp.append(tt[i])
+	else:
+		ti.append(tt[i])
+	i = i + 1
+	
+print("Nombres pairs :", tp)
+print("Nombres impairs :",ti)
+
+#EXERCICE 20 : Écrivez un programme qui analyse un par un tous les éléments d’une liste de mots (par
+#exemple : ['Jean', 'Maximilien', 'Brigitte', 'Sonia', 'Jean-Pierre', 'Sandra']) pour
+#générer deux nouvelles listes. L’une contiendra les mots comportant moins de 6 caractères,
+#l’autre les mots comportant 6 caractères ou davantage.
+
+ll = ['Jean', 'Maximilien', 'Brigitte', 'Sonia', 'Jean-Pierre', 'Sandra']
+c = 0
+lmoins6 = []
+lplus6 = []
+
+while c < len(ll)-1:
+	if len(ll[c]) < 6:
+		lmoins6.append(ll[c])
+	else:
+		lplus6.append(ll[c])
+	c = c + 1
+	
+print("Noms avec moins de 6 lettres : ", lmoins6)
+print("Noms avec 6 lettres et plus : ", lplus6)
+		
+#EXERCICE 21 : Écrivez un programme qui convertisse en mètres par seconde et en km/h une vitesse fournie
+#par l’utilisateur en miles/heure. (Rappel : 1 mile = 1609 mètres)
+
+print("EXERCICE 21 :")
+
+v = input("Entrez une vitesse en miles/heure : ")
+mph = float(v)
+mps = mph * 1609 / 3600
+kmph = mph * 1.609 
+
+print(mps, " m/s")
+print(kmph, " km/h")
+
+#EXERCICE 22 : Écrivez un programme qui calcule le périmètre et l’aire d’un triangle quelconque dont l’utilisateur
+#fournit les 3 côtés.
+ 
+print("EXERCICE 22 :")
+
+from math import sqrt
+
+print("Calcul de l'aire et du périmètre d'un triangle quelconque. Veuillez rentrer les longueurs.")
+
+cote1 = input("Longueur du 1er côté du triangle: ")
+cote2 = input("Longueur du 2ème côté du triangle: ")
+cote3 = input("Longueur du 3ème côté du triangle: ")
+
+a = float(cote1)
+b = float(cote2)
+c = float(cote3)
+
+d = (a+b+c) / 2
+p = a+b+c
+
+aire = sqrt(d*(d-a)*(d-b)*(d-c))
+
+print("Le périmètre de ce triangle est égal à ", p, " cm et son aire est égale à ", aire, "cm².")
+
+#EXERCICE 23 : Écrivez un programme qui permette d’encoder des valeurs dans une liste. Ce programme
+#devrait fonctionner en boucle, l’utilisateur étant invité à entrer sans cesse de nouvelles
+#valeurs, jusqu’à ce qu’il décide de terminer en frappant <Enter> en guise d’entrée. Le
+#programme se terminerait alors par l’affichage de la liste.
+
+print("EXERCICE 23 :")
+
+tt = []  
+ch = "start"  
+
+while ch != "":
+	print("Veuillez entrer une valeur : ")
+	ch = input()
+	if ch != "":
+		tt.append(float(ch))  
+ 
+print(tt)
+
+#EXERCICE 24 : Écrire un programme qui, étant données deux bornes entières a et b, additionne les nombres
+#multiples de 3 et de 5 compris entre ces bornes. Prendre par exemple a = 0, b = 32 ; le résultat
+#devrait être alors 0 + 15 + 30 = 45.
+#Modifier légèrement ce programme pour qu’il additionne les nombres multiples de 3 ou de 5
+#compris entre les bornes a et b. Avec les bornes 0 et 32, le résultat devrait donc être : 0 + 3 + 5
+#+ 6 + 9 + 10 + 12 + 15 + 18 + 20 + 21 + 24 + 25 + 27 + 30 = 225. 
+
+print("EXERCICE 24 :")
+
+print("Veuillez entrer la limite inférieure :", end=' ')
+a = eval(input())
+print("Veuillez entrer la limite supérieure :", end=' ')
+b = eval(input())
+
+s = 0          # somme recherchée (nulle au départ)
+                    
+                    # Parcours de la série des nombres compris entre a et b :
+
+n = a           # nombre en cours de traitement
+
+while n <= b:
+	if n % 3 == 0 and n % 5 == 0:           # variante : 'or' au lieu de 'and'
+		s = s + n
+	n = n + 1
+
+print("La somme recherchée vaut", s)
+
+#EXERCICE 25 : Déterminer si une année (dont le millésime est introduit par l’utilisateur) est bissextile ou non.
+#Une année A est bissextile si A est divisible par 4. Elle ne l’est cependant pas si A est un
+#multiple de 100, à moins que A ne soit multiple de 400.
+
+print("EXERCICE 25 :")
+
+print("Veuillez entrez l'année à évaluer : ")
+a = eval(input())
+
+if a % 4:
+	print("Cette année n'est pas bissextile.")
+else:
+	if a % 100 == 0:
+		print("Cette année n'est pas bissextile.")
+	elif a % 400 == 0:
+		print("Cette année est bissextile.")
+	else:
+		print("Cette année est bissextile.")
+		
+#EXERCICE 26 : Demander à l’utilisateur son nom et son sexe (M ou F). En fonction de ces données, afficher
+#« Cher Monsieur » ou « Chère Mademoiselle » suivi du nom de la personne.
+
+print("EXERCICE 26 :")
+
+print("Quel est votre nom ?")
+nom = input()
+print("Êtes-vous un homme ou une femme ? Entrez M si vous un homme et F si vous êtes une femme.")
+sexe = input()
+
+if sexe == 'M':
+	print("Cher Monsieur ", nom)
+elif sexe == 'F':
+	print("Cher Mademoiselle ", nom)
+else:
+	while sexe != 'M' or sexe != 'F':
+		print("ERREUR : Entrez M si vous êtes un homme et F si vous êtes une femme.")
+		sexe = input()
+		
+#EXERCICE 27 : Demander à l’utilisateur d’entrer trois longueurs a, b, c. À l’aide de ces trois longueurs,
+#déterminer s’il est possible de construire un triangle. Déterminer ensuite si ce triangle est
+#rectangle, isocèle, équilatéral ou quelconque. Attention : un triangle rectangle peut être
+#isocèle.
+
+print("EXERCICE 27 :")
+
+print("Longueur du premier côté : ")
+a = eval(input())
+print("Longueur du deuxième côté : ")
+b = eval(input())
+print("Longueur du troisième côté : ")
+c = eval(input())
+
+while a > b+c or b > a+c or c > a+b:
+	print("ERREUR : Impossible de construire un triangle avec ces longueurs. Veuillez entrez des nouvelles longueurs.")
+	print("Longueur du premier côté : ")
+	a = eval(input())
+	print("Longueur du deuxième côté : ")
+	b = eval(input())
+	print("Longueur du troisième côté : ")
+	c = eval(input())
+	
+f = 0
+
+if a == b and b == c:
+	print("Ce triangle est équilatéral.")
+	f = 1
+elif a == b or b == c or c == a:
+	print("Ce triangle est isocèle.")
+	f = 1
+if a*a + b*b == c*c or b*b + c*c == a*a or c*c + a*a == b*b:
+	print("Ce triangle est rectangle.")
+	f = 1
+if f == 0:
+	print("Ce triangle est quelconque.")
+	
+#EXERCICE 28 : Demander à l’utilisateur qu’il entre un nombre. Afficher ensuite : soit la racine carrée de ce
+#nombre, soit un message indiquant que la racine carrée de ce nombre ne peut être calculée.
+
+print("EXERCICE 28 :")
+
+print("Entrez un nombre positif: ")
+n = eval(input())
+
+while n < 0:
+	print("ERREUR : Veuillez entrez un nombre positif. Entrez un nombre : ")
+	n = eval(input())
+
+s = sqrt(n)
+
+print("Racine carré de ", n, " = ", s)
+
+#EXERCICE 29 : Convertir une note scolaire N quelconque, entrée par l’utilisateur sous forme de points (par
+#exemple 27 sur 85), en une note standardisée suivant le code ci-après :
+# Note Appréciation
+# N >= 80 % A
+# 80 % > N >= 60 % B
+# 60 % > N >= 50 % C
+# 50 % > N >= 40 % D
+# N < 40 % E
+
+print("EXERICE 29 :")
+
+print("Veuillez entrez une note sur 85 : ")
+note = eval(input())
+
+if note >= 85*80/100:
+	print("Cette note correspond à l'appréciation A.")
+elif 85*80/100 > note >= 85*60/100:
+	print("Cette note correspond à l'appréciation B.")
+elif 85*60/100 > note >= 85*50/100:
+	print("Cette note correspond à l'appréciation C.")
+elif 85*50/100 > note >= 85*40/100:
+	print("Cette note correspond à l'appréciation D.")
+elif note < 85*40/100:
+	print("Cette note correspond à l'appréciation E.")
+	
+#EXERCICE 30 : Soit la liste suivante :
+#['Jean-Michel', 'Marc', 'Vanessa', 'Anne', 'Maximilien',
+#'Alexandre-Benoît', 'Louise']
+#Écrivez un script qui affiche chacun de ces noms avec le nombre de caractères correspondant.
+
+print("EXERCICE 30 :")
+
+tt = ['Jean-Michel', 'Marc', 'Vanessa', 'Anne', 'Maximilien', 'Alexandre-Benoît', 'Louise']
+c = 0
+
+while c < len(tt):
+	print(tt[c],len(tt[c]))
+	c = c+1
+		
+#EXERCICE 31 : Écrire une boucle de programme qui demande à l’utilisateur d’entrer des notes d’élèves. La
+#boucle se terminera seulement si l’utilisateur entre une valeur négative. Avec les notes ainsi
+#entrées, construire progressivement une liste. Après chaque entrée d’une nouvelle note (et
+#donc à chaque itération de la boucle), afficher le nombre de notes entrées, la note la plus
+#élevée, la note la plus basse, la moyenne de toutes les notes.
+
+print("EXERCICE 31 :")
+
+notes = []
+noteMin = 10e+1000
+noteMax = 0
+c = 0
+i = 0
+f = 0
+
+while f >= 0:
+	print("Si vous n'avez plus de note à entrer, entrez un valeur négative. Sinon, entrez une nouvelle note : ")
+	f = float(eval(input()))
+	if f < 0:
+		print("OK, terminé.")
+	else:
+		notes.append(f)
+		if noteMax < f:
+			noteMax = f
+		if noteMin > f:
+			noteMin = f
+		while c < len(notes):
+			i = i + notes[c]
+			c = c+1
+		moyenne = i / len(notes)
+		print("Note la plus élevée : ", noteMax)
+		print("Note la moins élevée : ", noteMin)
+		print("Moyenne : ", moyenne)
+		
+#EXERCICE 32 : Importez le module turtle pour pouvoir effectuer des dessins simples.
+#Vous allez dessiner une série de triangles équilatéraux de différentes couleurs.
+#Pour ce faire, définissez d’abord une fonction triangle() capable de dessiner un triangle d’une
+#couleur bien déterminée (ce qui signifie donc que la définition de votre fonction doit
+#comporter un paramètre pour recevoir le nom de cette couleur).
+#Utilisez ensuite cette fonction pour reproduire ce même triangle en différents endroits, en
+#changeant de couleur à chaque fois.
+
+#Même foction en plus compliqué dans l'exercice 37
+
+#EXERCICE 33 : Définissez une fonction ligneCar(n, ca) qui renvoie une chaîne de n caractères ca.
+
+print("EXERICE 33 :")
+
+def ligneCar(n, ca):
+	"Fonction qui renvoie une chaîne de n caractère ca"
+	return n*ca
+	
+
+print("Veuillez entrez un nombre entier: ")
+n = eval(input())
+print("Veuillez entrez un caractère : ")
+ca = input()
+
+print(ligneCar(n, ca))
+
+#EXERCICE 34 : Définissez une fonction surfCercle(R). Cette fonction doit renvoyer la surface (l’aire) d’un
+#cercle dont on lui a fourni le rayon R en argument. Par exemple, l’exécution de l’instruction :
+#print(surfCercle(2.5)) doit donner le résultat : 19.63495...
+	
+print("EXERCICE 34 :")
+
+from math import pi
+
+def surfCercle(R):
+	"Cette fonction renvoie l'aire d'un cercle  dont on lui a fournit le rayon R en argument."
+	return pi* R**2
+	
+print("On veut calculer l'aire d'un cercle. Veuillez entrez le rayon de ce cercle :")
+R = eval(input())
+
+print(surfCercle(R))
+
+#EXERCICE 35 : Définissez une fonction volBoite(x1,x2,x3) qui renvoie le volume d’une boîte
+#parallélépipédique dont on fournit les trois dimensions x1, x2, x3 en arguments.
+#Par exemple, l’exécution de l’instruction :
+#print(volBoite(5.2, 7.7, 3.3)) doit donner le résultat : 132.132.
+
+print("EXERCICE 35 :")
+
+def volBoite(x1, x2, x3):
+	"Cette fonction renvoie le volume d'une boite parallélépipédique dont on fournit les trois dimensions x1, x2, x3  fournis en arguments."
+	return x1*x2*x3
+	
+print("On souhaite calculer le volume d'une boite parallélépipédique. Veuillez entrez la longueur de cette boite:")
+l = eval(input())
+print("Et maintenant, la largeur de cette boite:")
+L = eval(input())
+print("Et pour finir, veuillez entrez la hauteur de cette boite:")
+h = eval(input())
+
+print(volBoite(l,L,h))
+
+#EXERCICE 36 : Définissez une fonction maximum(n1,n2,n3) qui renvoie le plus grand de 3 nombres n1, n2,
+#n3 fournis en arguments. Par exemple, l’exécution de l’instruction :
+#print(maximum(2,5,4)) doit donner le résultat : 5.
+
+print("EXERCICE 36 :")
+
+def maximum(n1, n2, n3):
+	"Cette fonction renvoie le plus grand de 3 nombres n1, n2, n3 fournis en arguments."
+	if n1 >= n2 and n1 >= n3:
+		return n1
+	elif n2 >= n1 and n2 >= n3:
+		return n2
+	else:
+		return n3
+	
+print(maximum(2,5,4))
+
+#EXERCICE 37 : Complétez le module de fonctions graphiques dessins_tortue.py décrit à la page 71.
+#Commencez par ajouter un paramètre angle à la fonction carre(), de manière à ce que les
+#carrés puissent être tracés dans différentes orientations.
+#Définissez ensuite une fonction triangle(taille, couleur, angle) capable de dessiner un
+#triangle équilatéral d’une taille, d’une couleur et d’une orientation bien déterminées.
+#Testez votre module à l’aide d’un programme qui fera appel à ces fonctions à plusieurs
+#reprises, avec des arguments variés pour dessiner une série de carrés et de triangles :
+
+print("EXERCICE 37 :")
+
+from turtle import *
+
+def carre(taille, colour, angle):
+	"fonction qui dessine un carré de taille, d'orientation et de couleur déterminées"
+	color(colour)
+	c =0
+	right(angle)
+	while c <4:
+		forward(taille)
+		left(90)
+		c = c +1
+	up()
+	left(180)
+	forward(taille + 10)
+	down()
+		
+def triangle(taille, colour, angle):
+	"Cette fonction dessine un triangle de couleur, de taille et d'orientation déterminée."
+	color(colour)
+	c = 0
+	right(angle)
+	while c < 3:
+		forward(taille)
+		left(120)
+		c = c +1
+	
+		
+i = 0
+a = 25
+t = 22.5
+
+#up()
+#goto(-300, 0)
+#down()
+
+#while i < 9:
+#	carre(a, 'blue', 90)
+#	up()
+#	left(90)
+#	forward(a + 10)
+#	down()
+#	triangle(t, 'red', 60)
+#	up()
+#	left(60)
+#	forward(t + 10)
+#	down()
+#	i, a, t = i +2, a +15, t +15
+	
+#EXERCICE 38 : Ajoutez au module de l’exercice précédent une fonction etoile5() spécialisée dans le dessin
+#d’étoiles à 5 branches. Dans votre programme principal, insérez une boucle qui dessine une
+#rangée horizontale de de 9 petites étoiles de tailles variées.
+
+print("EXERCICE 38 :")
+
+from turtle import *
+
+def etoile5(taille):
+	"fonction qui dessine des étoiles à 5 branches"
+	a = 0
+	while a < 5:
+		forward(taille)
+		right(144)
+		a = a +1
+	up()
+	forward(taille + 25)
+	down()
+		
+c = 0
+a = 50
+
+#while c < 9:
+#	etoile5(a)
+#	c = c + 1
+#	a = a + 25
+#	if c >= 5:
+#		a = a - 50
+		
+#EXERCICE 39 : Ajoutez au module de l’exercice précédent une fonction etoile6() capable de dessiner une
+#étoile à 6 branches, elle-même constituée de deux triangles équilatéraux imbriqués. Cette
+#nouvelle fonction devra faire appel à la fonction triangle() définie précédemment.
+#Votre programme principal dessinera également une série de ces étoiles.
+
+print("EXERCICE 39 :")
+
+def etoile6(taille, couleur):
+	"fonction qui dessine des etoiles a 6 branches"
+	triangle(taille, couleur, 0)
+	up()
+	left(60)
+	forward(taille/3)
+	left(60)
+	forward(taille/3)
+	left(180)
+	down()
+	triangle(taille, couleur, 0)
+	
+c = 0
+t = 25
+a = 60
+
+#while c < 8:
+#	carre(t, 'red', a)
+#	etoile5(t)
+#	triangle(t, 'red', a)
+#	up()
+#	right(a)
+#	forward(t + 10)
+#	down()
+#	etoile6(t, 'red')
+#	c = c + 1
+#	t = t + 25
+
+#EXERCICE 40 : Définissez une fonction compteCar(ca,ch) qui renvoie le nombre de fois que l’on rencontre le
+#caractère ca dans la chaîne de caractères ch. Par exemple, l’exécution de l’instruction :
+#print(compteCar(’e’, ’Cette phrase est un exemple’)) doit donner le résultat : 7
+
+print("EXERCICE 40 :")
+
+def compteCar(ca, ch):
+	"fonction qui compte le nombre de caractere ca dans une chaine de caractere ch"
+	i = 0
+	n = 0
+	while i < len(ch):
+		if ch[i] == ca:
+			n = n + 1
+		i = i + 1
+	return n
+			
+	
+print(compteCar('e', 'Cette phrase est un exemple'))
+
+#EXERCICE 41 : 0 Définissez une fonction indexMax(liste) qui renvoie l’index de l’élément ayant la valeur la
+#plus élevée dans la liste transmise en argument. Exemple d’utilisation :
+#serie = [5, 8, 2, 1, 9, 3, 6, 7]
+#print(indexMax(serie))
+#4
+
+print("EXERCICE 41 :")
+
+def indexMax(liste):
+	"fonction qui renvoie le plus grand élément d'une liste"
+	i = 0
+	max = 0
+	iMax = 0
+	while i < len(serie):
+		if serie[i] > max:
+			max = serie[i]
+			iMax = i
+		i = i + 1
+	return iMax
+	
+serie = [5, 1, 8, 3, 2, 7, 4, 9, 6]
+
+print(indexMax(serie))
+
+#EXERCICE 42: Définissez une fonction nomMois(n) qui renvoie le nom du énième mois de l’année.
+#Par exemple, l’exécution de l’instruction :
+#print(nomMois(4)) doit donner le résultat : Avril.
+
+print("EXERCICE 42 :")
+
+def nomMois(n):
+	"fonction qui renvoie le nom du enieme mois de l'annee"
+	mois = ["Il n'y a pas de mois zero", 'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre']
+	return mois[n]
+	
+print(nomMois(4))
+
+#EXERCICE 43 : Définissez une fonction inverse(ch) qui permette d’inverser l’ordre des caractères d’une
+#chaîne quelconque. La chaîne inversée sera renvoyée au programme appelant.
+
+print("EXERCICE 43 :")
+
+def inverse(ch):
+	"fonction qui inverse l'ordre des caracteres d'une chaine quelconque"
+	i = len(ch) - 1
+	hc = ""
+	while i >= 0:
+		hc = hc + ch[i]
+		i = i -1
+	return hc
+	
+print(inverse("sante"))
+
+#EXERCICE 44 : Définissez une fonction compteMots(ph) qui renvoie le nombre de mots contenus dans la
+#phrase ph. On considère comme mots les ensembles de caractères inclus entre des espaces.
+
+print("EXERCICE 44 :")
+
+def compteMots(phrase):
+	prec, char = ' ', ' '
+	nbMots = 0
+	i = 0
+	while i < len(phrase):
+		prec, char = char, phrase[i]
+ 		i = i +1
+		if prec == ' ' and char != ' ':
+			nbMots += 1                               # Le caractère courant n'est pas une espace
+                                                       # alors que le caractère précédent en était une,
+	return nbMots                                     # donc on vient de démarrer un nouveau mot.
+                                                       # On le compte.
+                                                       
+print(compteMots("          Je    suis    Gerardo Bibo  "))
+			 
+
+			
+		
+
